@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./MyComponents/Header";
+import {Todos} from "./MyComponents/Todos";
+import {Footer} from "./MyComponents/Footer";
 
 function App() {
+  let todos = [
+    {
+      sno: 1,
+      title: "Go to the market",
+      desc: "Go to the market and buy stationary and grocery"
+    },
+    {
+      sno: 2,
+      title: "Laundry",
+      desc: "wash unwashed cloths in washing machine and fold the washed ones"
+    },
+    {
+      sno: 3,
+      title: "Throw trash",
+      desc: "Throw the trash and change the disposible bag"
+    },
+    {
+      sno: 4,
+      title: "Call mumma",
+      desc: "call mumma and wish her birthday"
+    },
+    {
+      sno: 5,
+      title: "courier mom's birthday present",
+      desc: "courier mom's birthday present and order her cake"
+    }
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title="TO-DO List" searchBar={false} />
+      <Todos todos={todos}/>
+      <Footer />
+    </>
   );
 }
 
